@@ -1,4 +1,4 @@
-def reverse_string(input_string):
+def reverse_string(input_string: str) -> str:
     """
     Reverse the given string using a manual character-by-character approach.
 
@@ -11,14 +11,12 @@ def reverse_string(input_string):
     Raises:
         TypeError: If the input is not a string.
     """
-    # Type checking
+    # Type checking with additional type hints
     if not isinstance(input_string, str):
         raise TypeError("Input must be a string")
     
-    # Use list to manually reverse the string
-    reversed_chars = []
-    for i in range(len(input_string) - 1, -1, -1):
-        reversed_chars.append(input_string[i])
+    # Use efficient list comprehension for reversal
+    reversed_chars = [input_string[i] for i in range(len(input_string) - 1, -1, -1)]
     
-    # Convert list back to string
+    # Convert list back to string and return
     return ''.join(reversed_chars)
